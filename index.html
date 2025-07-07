@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DhammaCal</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/becss.css" />
+  <link rel="icon" href="images/favicon.ico" />
+</head>
+<body>
+  <header>
+    <img src="images/main-logo.png" alt="DhammaCal Logo" class="logo" />
+    <h1>DhammaCal</h1>
+    <p class="subtitle">Unified Solar–Lunar Theravāda Calendar</p>
+  </header>
+
+
+<main>
+  <section class="calendar-section">
+    <h2>
+      <button id="prev-month" class="nav-arrow">◀</button>
+      <span id="month-title">Calendar</span>
+      <button id="next-month" class="nav-arrow">▶</button>
+    </h2>
+    <div id="calendar-grid"></div>
+  </section>
+
+  <section class="calendar-section">
+    <h2>Mahānikāya Uposatha Calendar</h2>
+    <div id="mahanikaya-calendar-grid"></div>
+  </section>
+</main>
+
+  <footer>
+    <p>DhammaCal – Theravāda observance days and lunar phases integrated</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
