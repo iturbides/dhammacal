@@ -5,7 +5,11 @@ const URLS_TO_CACHE = [
   '/css/becss.css',
   '/app.js',
   '/manifest.json',
+  '/mahanikaya.csv',
   '/images/favicon.ico',
+  '/images/favicon-32.png',
+  '/images/favicon-16.png',
+  '/images/github.svg',
   '/images/icon-192.png',
   '/images/icon-512.png',
   '/images/main-logo.png'
