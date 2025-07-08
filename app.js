@@ -38,9 +38,25 @@ function renderCalendar(date) {
   const startDay = (firstDay.getDay() + 6) % 7;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-
-
   monthLabel.textContent = `${date.toLocaleString("default", { month: "long" })} ${year}`;
+
+  // Eliminar encabezado anterior si existe
+  const oldHeader = document.querySelector(".calendar-section .calendar-header");
+  if (oldHeader) oldHeader.remove();
+
+  // Crear encabezado nuevo
+ const calendarHeader = document.createElement("div");
+ calendarHeader.classList.add("calendar-header");
+
+  const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  weekDays.forEach(day => {
+    const wd = document.createElement("div");
+    wd.textContent = day;
+    calendarHeader.appendChild(wd);
+  });
+
+  // Insertar encabezado antes del grid
+  calendarGrid.parentNode.insertBefore(calendarHeader, calendarGrid);
 
   const totalCells = 42;
   for (let i = 0; i < totalCells; i++) {
@@ -107,7 +123,6 @@ function renderCalendar(date) {
 }
 
 // Renderiza el Mahānikāya calendar basado en CSV
-
 function renderMahanikayaCalendar(date) {
   mahanikayaGrid.innerHTML = "";
 
@@ -119,17 +134,21 @@ function renderMahanikayaCalendar(date) {
     return csvDate.getFullYear() === year && csvDate.getMonth() === month;
   });
 
-  const container = document.createElement("div");
-  container.classList.add("calendar-header");
 
- const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  weekDays.forEach(day => {
-  const wd = document.createElement("div");
-   wd.textContent = day;
-  container.appendChild(wd);
- });
+// Eliminar encabezado anterior si existe
+const oldHeader = document.querySelector("#mahanikaya-calendar-grid .calendar-header");
+if (oldHeader) oldHeader.remove();
 
-  mahanikayaGrid.appendChild(container);
+// Crear nuevo encabezado dentro del mismo grid
+const headerFragment = document.createDocumentFragment();
+["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].forEach(day => {
+  const cell = document.createElement("div");
+  cell.textContent = day;
+  cell.classList.add("calendar-header");
+  headerFragment.appendChild(cell);
+});
+mahanikayaGrid.appendChild(headerFragment);
+
 
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const startDay = (new Date(year, month, 1).getDay() + 6) % 7;
@@ -146,7 +165,7 @@ function renderMahanikayaCalendar(date) {
       const match = mahanikayaDates.find(d => d.date === fullDate);
       if (match) {
         const label = document.createElement("div");
-        label.classList.add("festival-name"); // Usa esta clase o crea una nueva si prefieres
+        label.classList.add("festival-name");
         label.textContent = match.event;
         cell.appendChild(label);
 
@@ -165,9 +184,6 @@ function renderMahanikayaCalendar(date) {
   }
 }
 
-
-
-
 // Botones de navegación
 prevMonthBtn.addEventListener("click", () => {
   currentDate.setMonth(currentDate.getMonth() - 1);
@@ -179,14 +195,13 @@ nextMonthBtn.addEventListener("click", () => {
   renderCalendar(currentDate);
 });
 
-// CSV loader (usa PapaParse o un método simple)
+// CSV loader
 function loadCSVAndRender(csvText) {
   const lines = csvText.trim().split("\n").slice(1); // Skip header
-mahanikayaDates = lines.map(line => {
-  const [dateStr, event] = line.split(",");
-  return { date: dateStr.trim(), event: event?.trim() || "" };
-});
-
+  mahanikayaDates = lines.map(line => {
+    const [dateStr, event] = line.split(",");
+    return { date: dateStr.trim(), event: event?.trim() || "" };
+  });
 
   renderCalendar(currentDate); // Start
 }

@@ -158,14 +158,17 @@ footer {
 #mahanikaya-calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-/*  gap: 1px;
-  margin-top: 1rem; */
+  gap: 5px;
 }
+
+
 .calendar-section h2:last-of-type {
   color: white;
   border-top: 2px dashed white;
   padding-top: 1rem;
 }
+
+
 
 
 :root {
