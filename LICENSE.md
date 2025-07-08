@@ -1,5 +1,5 @@
 GNU General Public License (GPLv3)
-Meditimer - A simple meditation timer
+DhammaCal - Theravāda observance days and lunar phases integrated
 Copyright (C) 2025 Upāsaka Ānanda
 
                     GNU GENERAL PUBLIC LICENSE
