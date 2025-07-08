@@ -83,7 +83,7 @@ function renderCalendar(date) {
 
     const solarPart = document.createElement("div");
     solarPart.classList.add("solar-part");
-    solarPart.textContent = isOutsideMonth ? "N/A" : solarDate.getDate();
+    solarPart.textContent = isOutsideMonth ? "-" : solarDate.getDate();
 
     const lunarPart = document.createElement("div");
     lunarPart.classList.add("lunar-part");
@@ -177,7 +177,7 @@ mahanikayaGrid.appendChild(headerFragment);
       }
     } else {
       cell.classList.add("outside-month");
-      cell.innerHTML = `<div class="solar-part">N/A</div>`;
+      cell.innerHTML = `<div class="solar-part"></div>`;
     }
 
     mahanikayaGrid.appendChild(cell);
