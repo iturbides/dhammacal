@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dhamma-cache-v1';
+const CACHE_NAME = 'dhamma-cache-v1.3';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',

@@ -1,11 +1,10 @@
 {
   "name": "DhammaCal",
   "short_name": "DhammaCal",
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#f6f2eb",
-  "theme_color": "#e5c07b",
-  "description": "Theravāda Buddhist lunisolar and solar calendar.",
+  "background_color": "#212121",
+  "theme_color": "#212121",
   "icons": [
     {
       "src": "images/icon-192.png",
