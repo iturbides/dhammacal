@@ -13,7 +13,6 @@
 
 The purpose of this app is to offer a quick and intuitive overview of both the **astronomically-based moon phases** and the **traditional Uposatha observance dates** as preserved in the Thai Forest Tradition.
 
-![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg "a title")
 
 
 <h3>Screenshot</h3>
