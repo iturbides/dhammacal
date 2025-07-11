@@ -1,4 +1,5 @@
 # About DhammaCal
+<h2>Namo tassa bhagavato arahato sammā-sambuddhassa</h2>
 
 👉 [https://dhammacal.netlify.app](https://dhammacal.netlify.app)
 
