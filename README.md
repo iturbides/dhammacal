@@ -13,6 +13,14 @@
 
 The purpose of this app is to offer a quick and intuitive overview of both the **astronomically-based moon phases** and the **traditional Uposatha observance dates** as preserved in the Thai Forest Tradition.
 
+
+
+
+<h3>Screenshot</h3>
+![Screenshot](./images/screenshot.jpg)
+
+
+
 The full Mahānikāya calendar, maintained by **Gambhīro Bhikkhu**, can be viewed online at:  
 👉 [https://splendidmoons.github.io](https://splendidmoons.github.io)
 
